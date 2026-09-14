@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mubashir Aslam — Graphic Designer, Karachi</title>
+<meta name="description" content="Portfolio of Mubashir Aslam, graphic designer in Karachi. Visual branding, social media design, logos, email design and signage artwork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --wash:#F1F5FD;
+  --ink:#0B1B3A;
+  --muted:#5D6E8C;
+  --blue:#015eea;
+  --blue-deep:#015eea;
+  --orange:#FF5C1A;
+  --hair:#DCE4F2;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+h1,h2,h3{margin:0;font-family:'Space Grotesk',Inter,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.02}
+h2{font-size:clamp(1.9rem,4.4vw,3.2rem)}
+h3{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;line-height:1.35}
+p{margin:0 0 1em}
+.lede{font-size:clamp(1.06rem,1.5vw,1.24rem);color:#31405C;max-width:56ch}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.mark{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:9px}
+.mark:hover{text-decoration:none;color:var(--blue)}
+.mark i{width:9px;height:9px;background:var(--orange);border-radius:99px;display:block}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.96rem;font-weight:500}
+.nav ul a{color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a.on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--orange)}
+.nav ul a.on:hover{text-decoration:none}
+
+/* hero */
+.hero{padding:clamp(38px,6vw,74px) 0 clamp(30px,4vw,48px)}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.75fr);gap:clamp(28px,5vw,60px);align-items:end}
+.kicker{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--blue);margin-bottom:14px}
+.name{font-size:clamp(3.2rem,13.5vw,8.6rem);line-height:.86;letter-spacing:-.045em}
+.name span{display:block}
+.name em{font-style:normal;color:var(--blue)}
+.hero .lede{margin-top:26px}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-block;font-weight:700;padding:13px 24px;border-radius:2px}
+.btn-a{background:var(--blue);color:#fff}
+.btn-a:hover{background:var(--blue-deep);text-decoration:none}
+.btn-b{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-b:hover{background:var(--ink);color:#fff;text-decoration:none}
+
+/* arch portrait */
+.arch{position:relative;align-self:end;margin:0}
+.arch-shape{
+  aspect-ratio:3/4;background:var(--blue);
+  border-radius:999px 999px 4px 4px;
+  overflow:hidden;display:grid;place-items:center;
+}
+.arch-shape img{width:100%;height:100%;object-fit:cover}
+.arch-shape .initials{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(3rem,7vw,5rem);color:#fff;letter-spacing:-.04em}
+.chip{position:absolute;left:-14px;bottom:36px;background:var(--orange);color:#fff;font-weight:700;font-size:.84rem;padding:8px 13px;line-height:1.2}
+.arch figcaption{margin-top:12px;font-size:.85rem;color:var(--muted)}
+
+/* ticker */
+.ticker{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);overflow:hidden;padding:16px 0;margin-top:clamp(30px,5vw,56px)}
+.ticker-in{display:flex;width:max-content;animation:slide 34s linear infinite}
+.ticker:hover .ticker-in{animation-play-state:paused}
+.ticker b{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(1.15rem,2.4vw,1.7rem);letter-spacing:-.02em;padding:0 22px;white-space:nowrap}
+.ticker b:nth-of-type(even){color:var(--blue)}
+.ticker s{text-decoration:none;color:var(--orange);align-self:center;font-size:1.1rem}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:clamp(56px,8vw,104px) 0}
+.shead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,50px);align-items:end;margin-bottom:clamp(28px,4vw,46px)}
+.shead p{margin:0;color:var(--muted);font-size:1rem;max-width:44ch}
+
+/* work preview — liquid carousel */
+.work{background:var(--wash);position:relative;overflow:hidden}
+.work::before,.work::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
+.work::before{width:420px;height:420px;background:linear-gradient(135deg,var(--blue),#8FB4FF);opacity:.28;top:-130px;left:-110px;animation:blobDrift 19s ease-in-out infinite}
+.work::after{width:360px;height:360px;background:linear-gradient(135deg,var(--orange),#FFC9A8);opacity:.26;bottom:-140px;right:-90px;animation:blobDrift 23s ease-in-out infinite reverse}
+.work .wrap{position:relative;z-index:1}
+
+.carousel-wrap{display:flex;align-items:center;gap:14px;outline:none}
+.carousel{position:relative;flex:1;min-width:0;height:clamp(300px,38vw,380px)}
+.tile{
+  position:absolute;top:50%;left:50%;width:230px;margin:0;overflow:hidden;cursor:pointer;
+  border-radius:22px;border:1px solid rgba(255,255,255,.6);
+  background:rgba(255,255,255,.4);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 14px 34px rgba(11,27,58,.14);
+  transition:transform .6s cubic-bezier(.22,.85,.3,1),opacity .6s ease,box-shadow .4s ease,background .4s ease;
+}
+.tile.is-active{cursor:default;box-shadow:0 26px 56px rgba(11,27,58,.24)}
+.tile:hover{background:rgba(255,255,255,.58)}
+.thumb{aspect-ratio:4/3;display:grid;place-items:center;padding:20px;background:transparent}
+.thumb svg{width:100%;height:100%}
+.thumb img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.tile figcaption{padding:14px 16px;border-top:1px solid rgba(255,255,255,.4);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.tile .cat{color:var(--muted);font-size:.82rem;flex:none}
+.car-btn{
+  flex:none;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.6);
+  background:rgba(255,255,255,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  display:grid;place-items:center;font-size:1.3rem;line-height:1;color:var(--ink);cursor:pointer;
+  box-shadow:0 6px 20px rgba(11,27,58,.1);transition:background .25s,transform .25s;
+}
+.car-btn:hover{background:#fff;transform:scale(1.08)}
+.car-btn:active{transform:scale(.96)}
+.more{margin-top:26px;display:inline-block;font-weight:700}
+
+/* about — bento grid */
+#about{position:relative;overflow:hidden}
+#about::before,#about::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
+#about::before{width:440px;height:440px;background:linear-gradient(135deg,var(--blue),#8FB4FF);opacity:.35;top:-140px;left:-120px;animation:blobDrift 16s ease-in-out infinite}
+#about::after{width:380px;height:380px;background:linear-gradient(135deg,var(--orange),#FFC9A8);opacity:.3;bottom:-150px;right:-100px;animation:blobDrift 20s ease-in-out infinite reverse}
+@keyframes blobDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(36px,-26px) scale(1.1)}}
+#about .wrap{position:relative;z-index:1}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(120px,auto);gap:16px;grid-auto-flow:dense}
+.b-card{
+  border-radius:22px;border:1px solid rgba(255,255,255,.6);padding:26px;
+  background:rgba(255,255,255,.4);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 8px 30px rgba(11,27,58,.06);
+  transition:transform .4s cubic-bezier(.2,.7,.3,1),box-shadow .4s cubic-bezier(.2,.7,.3,1),background .4s ease,border-color .4s ease;
+}
+.b-card:hover{transform:translateY(-6px) scale(1.015);box-shadow:0 18px 40px rgba(11,27,58,.12);background:rgba(255,255,255,.58)}
+#about .b-card:hover{background:rgba(1,94,234,.16);border-color:rgba(1,94,234,.55);box-shadow:0 18px 40px rgba(1,94,234,.22)}
+#about .b-accent:hover{background:rgba(1,94,234,.85);border-color:rgba(1,94,234,.6)}
+.b-bio{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:center}
+.b-bio p{margin:0 0 1em;max-width:52ch}
+.b-bio p:last-child{margin-bottom:0}
+.b-cell{display:flex;flex-direction:column;justify-content:center;gap:6px}
+.b-wide{grid-column:span 2}
+.b-cell b{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:800;letter-spacing:-.03em;line-height:1.15}
+.b-cell span{font-size:.88rem;color:var(--muted)}
+.b-accent{background:rgba(11,27,58,.72);color:#fff;border-color:rgba(255,255,255,.16);display:flex;align-items:center}
+.b-accent:hover{background:rgba(11,27,58,.82)}
+.b-accent p{margin:0;font-size:1.1rem;font-weight:600;letter-spacing:-.01em;line-height:1.45}
+.b-accent p em{font-style:normal;color:var(--orange)}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.show{opacity:1;transform:none}
+.bento .reveal:nth-child(1){transition-delay:0s}
+.bento .reveal:nth-child(2){transition-delay:.08s}
+.bento .reveal:nth-child(3){transition-delay:.16s}
+.bento .reveal:nth-child(4){transition-delay:.24s}
+.bento .reveal:nth-child(5){transition-delay:.32s}
+.bento .reveal:nth-child(6){transition-delay:.4s}
+.bento.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b-skill h3{font-size:1rem;margin-bottom:4px}
+.b-skill p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
+.b-tagcard{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.b-tagcard span{border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.35);padding:7px 13px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--ink)}
+.b-when{color:var(--orange);font-weight:600;font-size:.88rem;margin-bottom:10px}
+.b-list{margin:0;padding-left:18px;color:var(--muted);font-size:.95rem}
+.b-list li{margin:5px 0}
+.note{color:#8C99AE;font-weight:600}
+
+/* skills + path — liquid backgrounds */
+#skills,#path{position:relative;overflow:hidden}
+#skills::before,#skills::after,#path::before,#path::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
+#skills::before{width:400px;height:400px;background:linear-gradient(135deg,var(--orange),#FFC9A8);opacity:.26;top:-120px;right:-100px;animation:blobDrift 18s ease-in-out infinite}
+#skills::after{width:340px;height:340px;background:linear-gradient(135deg,var(--blue),#8FB4FF);opacity:.28;bottom:-130px;left:-90px;animation:blobDrift 22s ease-in-out infinite reverse}
+#path::before{width:420px;height:420px;background:linear-gradient(135deg,var(--blue),#8FB4FF);opacity:.28;top:-130px;left:-110px;animation:blobDrift 17s ease-in-out infinite}
+#path::after{width:360px;height:360px;background:linear-gradient(135deg,var(--orange),#FFC9A8);opacity:.26;bottom:-140px;right:-90px;animation:blobDrift 21s ease-in-out infinite reverse}
+#skills .wrap,#path .wrap{position:relative;z-index:1}
+
+/* skills + software */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(30px,5vw,64px)}
+.gp{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;margin-bottom:6px}
+
+/* contact */
+.hire{background:var(--blue);color:#fff}
+.hire h2{color:#fff;max-width:22ch}
+.hire a{color:#fff}
+.mailto{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:clamp(1.35rem,4.2vw,2.6rem);letter-spacing:-.03em;display:inline-block;margin:22px 0 8px;word-break:break-word;box-shadow:inset 0 -3px 0 var(--orange)}
+.mailto:hover{text-decoration:none;color:#FFD9C9}
+.hire-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:38px;border-top:1px solid rgba(255,255,255,.28);padding-top:26px}
+.hire-grid span{display:block;font-size:.85rem;color:#C6D3FF;margin-bottom:6px}
+.hire-grid address{font-style:normal;font-weight:600;line-height:1.5}
+.hire-grid strong{font-weight:600}
+
+footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:.88rem;border-top:1px solid var(--hair)}
+
+/* one page-load reveal */
+.rise{opacity:0;transform:translateY(14px);animation:rise .6s cubic-bezier(.2,.7,.3,1) forwards}
+.rise:nth-child(2){animation-delay:.08s}
+.rise:nth-child(3){animation-delay:.16s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr}
+  .arch{max-width:290px}
+  .shead,.two,.hire-grid{grid-template-columns:1fr}
+  .tile{width:190px}
+  .nav ul{gap:16px;font-size:.9rem}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .b-bio{grid-column:span 2;grid-row:span 1}
+}
+@media (max-width:540px){
+  body{font-size:16px}
+  .carousel{height:280px}
+  .tile{width:160px}
+  .car-btn{width:38px;height:38px;font-size:1.1rem}
+  .nav .mark span{display:none}
+  .bento,.bento.cols-2{grid-template-columns:1fr}
+  .b-bio,.b-wide{grid-column:span 1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .rise,.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="index.html"><i></i><span>Mubashir Aslam</span></a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <p class="kicker rise">Graphic designer, Karachi</p>
+      <h1 class="name rise"><span>Mubashir</span><span><em>Aslam</em></span></h1>
+      <p class="lede rise">I design brand marks, social media content and email layouts — and the large-format artwork that ends up on shopfronts. Designing since 2024, currently at Supertech LEDs.</p>
+      <div class="acts">
+        <a class="btn btn-a" href="work.html">See my work</a>
+        <a class="btn btn-b" href="#contact">Hire me</a>
+      </div>
+    </div>
+    <figure class="arch">
+      <div class="arch-shape" data-slot="hero" data-slot-label="Hero photo">
+        <img src="images/mubashir.jpg" alt="Mubashir Aslam">
+      </div>
+      <span class="chip">Open for work</span>
+    </figure>
+  </div>
+  <div class="wrap">
+    <div class="ticker">
+      <div class="ticker-in">
+        <b>Visual branding</b><s>+</s><b>Social media design</b><s>+</s><b>Logos</b><s>+</s><b>Banners</b><s>+</s><b>Email design</b><s>+</s><b>Signage artwork</b><s>+</s>
+        <b>Visual branding</b><s>+</s><b>Social media design</b><s>+</s><b>Logos</b><s>+</s><b>Banners</b><s>+</s><b>Email design</b><s>+</s><b>Signage artwork</b><s>+</s>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="shead">
+        <h2>Selected work</h2>
+        <p>Swipe through a few pieces — mostly social media design. The full set — logos, banners, email and signage — is on the work page.</p>
+      </div>
+      <div class="carousel-wrap reveal" role="region" aria-roledescription="carousel" aria-label="Selected work" tabindex="0">
+        <button class="car-btn car-prev" type="button" aria-label="Previous work">‹</button>
+        <div class="carousel" id="workCarousel">
+          <figure class="tile">
+            <div class="thumb" data-slot="home-work-1" data-slot-label="Selected work: Visual branding"><img src="images/visual-branding-home-work-1.png" alt="Visual branding"></div>
+            <figcaption><h3>Visual branding</h3><span class="cat">Branding</span></figcaption>
+          </figure>
+
+          <figure class="tile">
+            <div class="thumb" data-slot="home-work-2" data-slot-label="Selected work: Social media design"><img src="images/social-media-design-home-work-2.png" alt="Social media design"></div>
+            <figcaption><h3>Social media design</h3><span class="cat">Social</span></figcaption>
+          </figure>
+
+          <figure class="tile">
+            <div class="thumb" data-slot="home-work-4" data-slot-label="Selected work: Logo design"><img src="images/logo-design-home-work-4.png" alt="Logo design"></div>
+            <figcaption><h3>Logo design</h3><span class="cat">Logo</span></figcaption>
+          </figure>
+
+          <figure class="tile">
+            <div class="thumb" data-slot="home-work-5" data-slot-label="Selected work: Email design">
+              <svg viewBox="0 0 200 150" role="img" aria-label="Email design">
+                <rect x="50" y="12" width="100" height="126" fill="#F1F5FD"/>
+                <rect x="50" y="12" width="100" height="26" fill="#1B4DFF"/>
+                <rect x="62" y="22" width="44" height="8" fill="#fff"/>
+                <rect x="62" y="50" width="76" height="32" fill="#C9D4E8"/>
+                <rect x="62" y="90" width="76" height="7" fill="#0B1B3A"/>
+                <rect x="62" y="102" width="54" height="7" fill="#98A7BF"/>
+                <rect x="62" y="118" width="42" height="12" fill="#FF5C1A"/>
+              </svg>
+            </div>
+            <figcaption><h3>Email design</h3><span class="cat">Email</span></figcaption>
+          </figure>
+
+          <figure class="tile">
+            <div class="thumb" data-slot="home-work-3" data-slot-label="Selected work: Neon sign artwork">
+              <svg viewBox="0 0 200 150" role="img" aria-label="Neon sign artwork">
+                <rect x="14" y="20" width="172" height="92" fill="#0B1B3A"/>
+                <g fill="none" stroke="#FF5C1A" stroke-width="6" stroke-linecap="round">
+                  <path d="M52 84c-12 0-20-9-20-21s9-21 21-21 20 9 20 21-9 21-21 21z"/>
+                  <path d="M92 84V42l30 42V42"/>
+                  <path d="M140 42h30M140 63h24M140 84h30M140 42v42"/>
+                </g>
+                <rect x="14" y="122" width="172" height="6" fill="#E6ECF8"/>
+              </svg>
+            </div>
+            <figcaption><h3>Neon sign work</h3><span class="cat">Neon signs</span></figcaption>
+          </figure>
+
+          <figure class="tile">
+            <div class="thumb" data-slot="home-work-6" data-slot-label="Selected work: Channel letter work">
+              <svg viewBox="0 0 200 150" role="img" aria-label="Channel letter work">
+                <rect x="12" y="34" width="176" height="62" fill="#F1F5FD"/>
+                <rect x="30" y="50" width="30" height="34" fill="#1B4DFF"/>
+                <rect x="60" y="54" width="6" height="34" fill="#0F2FA8"/>
+                <rect x="78" y="50" width="30" height="34" fill="#0B1B3A"/>
+                <rect x="108" y="54" width="6" height="34" fill="#2A3B5C"/>
+                <rect x="126" y="50" width="30" height="34" fill="#FF5C1A"/>
+                <rect x="156" y="54" width="6" height="34" fill="#C2410C"/>
+                <rect x="12" y="104" width="176" height="6" fill="#C9D4E8"/>
+              </svg>
+            </div>
+            <figcaption><h3>Channel letter work</h3><span class="cat">Channel letters</span></figcaption>
+          </figure>
+        </div>
+        <button class="car-btn car-next" type="button" aria-label="Next work">›</button>
+      </div>
+      <a class="more" href="work.html">All work</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="shead">
+        <h2>About me</h2>
+        <p>Short version: I make things clear before I make them pretty.</p>
+      </div>
+      <div class="bento">
+        <div class="b-card b-bio reveal">
+          <p>I'm a graphic designer based in Karachi. I started designing in 2024 and joined Supertech LEDs in July of that year, where I design social media content, logos, banners and email layouts, and prepare the artwork for the signs the company builds.</p>
+          <p>I'm comfortable taking a brief from a rough idea, showing options early, and handing over clean files. If you also need someone who can talk to a production team without a translator in between, that's me.</p>
+        </div>
+        <div class="b-card b-cell reveal"><b>2024</b><span>Started designing</span></div>
+        <div class="b-card b-cell reveal"><b>Karachi</b><span>Working with clients anywhere</span></div>
+        <div class="b-card b-cell b-wide reveal"><b>Supertech LEDs</b><span>Graphic designer since July 2024</span></div>
+        <div class="b-card b-cell b-wide reveal"><b>Six areas</b><span>Branding, social, logos, banners, email, signage</span></div>
+        <div class="b-card b-accent b-wide reveal"><p>Work that's <em>simple, high-contrast</em> and built on a grid — it has to survive a thumbnail and a shopfront.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background:#F1F5FD">
+    <div class="wrap">
+      <div class="shead">
+        <h2>Skills and tools</h2>
+        <p>What I do, and what I do it in.</p>
+      </div>
+      <div class="two">
+        <div>
+          <h3 class="gp">Skills</h3>
+          <div class="bento cols-2">
+            <div class="b-card b-skill reveal"><h3>Visual branding</h3><p>Marks, colour and type that stay recognisable from a phone screen to a shopfront.</p></div>
+            <div class="b-card b-skill reveal"><h3>Social media design</h3><p>Posts, carousels and banners produced to a brand and a schedule.</p></div>
+            <div class="b-card b-skill reveal"><h3>Layout and typography</h3><p>Legibility first, character second. Grids, hierarchy, restraint.</p></div>
+            <div class="b-card b-skill reveal"><h3>Email design</h3><p>Clean templates that hold their shape across mail clients.</p></div>
+            <div class="b-card b-skill reveal"><h3>Print and large format</h3><p>Production-ready files with the right sizing, bleed and colour.</p></div>
+            <div class="b-card b-skill reveal"><h3>Team coordination</h3><p>Keeping clients, production and other designers on the same page.</p></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="gp">Software</h3>
+          <div class="bento cols-2">
+            <div class="b-card b-skill reveal"><h3>Adobe Photoshop</h3><p>Retouching, compositing and realistic mockups for client approval.</p></div>
+            <div class="b-card b-skill reveal"><h3>Adobe Illustrator</h3><p>Logos, vector letterforms and artwork that scales to any size.</p></div>
+            <div class="b-card b-skill reveal"><h3>Canva</h3><p>Fast social sets and templates a client's own team can keep using.</p></div>
+            <div class="b-card b-skill reveal"><h3>AI tools</h3><p>Concepts, references and backgrounds — then I design the real thing myself.</p></div>
+            <div class="b-card b-wide b-tagcard reveal">
+              <span>Brand kits</span><span>Mockups</span><span>Vector art</span><span>Templates</span><span>Print files</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <div class="shead">
+        <h2>Experience and education</h2>
+        <p>Where I've worked and studied.</p>
+      </div>
+      <!-- Replace the bracketed text with your real school, college and university names and years. -->
+      <div class="bento">
+        <div class="b-card b-bio reveal">
+          <h3 style="margin-bottom:4px">Graphic designer — Supertech LEDs</h3>
+          <div class="b-when">July 2024 to present, Karachi</div>
+          <ul class="b-list">
+            <li>Design social media posts, banners and campaign creatives for the company and its clients.</li>
+            <li>Produce logos and brand assets, from first concept to final files.</li>
+            <li>Prepare large-format artwork for neon signs and channel letters.</li>
+            <li>Build email designs and marketing graphics.</li>
+            <li>Coordinate with production and other designers to keep jobs on schedule.</li>
+          </ul>
+        </div>
+        <div class="b-card b-cell reveal"><b>Matriculation</b><span>[School name] — [Year]</span><span class="note">[Group or subjects, if you want to mention them.]</span></div>
+        <div class="b-card b-cell reveal"><b>Intermediate</b><span>[College name] — [Year]</span><span class="note">[Group or subjects, if you want to mention them.]</span></div>
+        <div class="b-card b-cell b-wide reveal"><b>[Degree]</b><span>[University name] — [Year to Year]</span><span class="note">[One line on what you studied.]</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hire" id="contact">
+    <div class="wrap">
+      <h2>Tell me what you need designed.</h2>
+      <a class="mailto" href="mailto:bugswork62@gmail.com">bugswork62@gmail.com</a>
+      <p style="max-width:52ch;color:#DCE4FF">Send the brief and your deadline. I'll reply with a plan, a timeline and a price.</p>
+      <div class="hire-grid">
+        <div><span>Phone and WhatsApp</span><strong><a href="tel:+923258979556">0325-8979556</a></strong></div>
+        <div><span>Email</span><strong><a href="mailto:bugswork62@gmail.com">bugswork62@gmail.com</a></strong></div>
+        <div><span>Based in</span><address>4/17 Willayatabad No 1,<br>Manghopir Road, Karachi, Pakistan</address></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>Mubashir Aslam — graphic designer, Karachi</span>
+  <span><a href="work.html">Work</a></span>
+</footer>
+
+<script>
+  var links = document.querySelectorAll('.nav ul a[href^="#"]');
+  var map = {};
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) map[el.id] = a;
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('on'); });
+          if (map[e.target.id]) map[e.target.id].classList.add('on');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+
+    var reveals = document.querySelectorAll('.reveal');
+    var rio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          rio.unobserve(e.target);
+        }
+      });
+    }, { threshold: .2 });
+    reveals.forEach(function(el){ rio.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('show'); });
+  }
+
+  var carousel = document.getElementById('workCarousel');
+  var carouselWrap = document.querySelector('.carousel-wrap');
+  var prevBtn = document.querySelector('.car-prev');
+  var nextBtn = document.querySelector('.car-next');
+  if (carousel && carouselWrap && prevBtn && nextBtn) {
+    var tiles = Array.prototype.slice.call(carousel.querySelectorAll('.tile'));
+    var n = tiles.length;
+    var active = 0;
+    var autoplayId = null;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var STEPS = [
+      { x: 0, rot: 0, scale: 1, op: 1 },
+      { x: 68, rot: 9, scale: .88, op: 1 },
+      { x: 126, rot: 16, scale: .78, op: .6 },
+      { x: 170, rot: 22, scale: .68, op: 0 }
+    ];
+
+    function layout(){
+      tiles.forEach(function(tile, i){
+        var diff = i - active;
+        if (diff > n / 2) diff -= n;
+        if (diff < -n / 2) diff += n;
+        var abs = Math.min(Math.abs(diff), STEPS.length - 1);
+        var s = STEPS[abs];
+        var sign = diff < 0 ? -1 : diff > 0 ? 1 : 0;
+        tile.style.transform = 'translate(-50%,-50%) translateX(' + (sign * s.x) + '%) rotate(' + (sign * s.rot) + 'deg) scale(' + s.scale + ')';
+        tile.style.zIndex = String(30 - abs * 5);
+        tile.style.opacity = String(s.op);
+        var hidden = abs >= STEPS.length - 1;
+        tile.style.pointerEvents = hidden ? 'none' : 'auto';
+        tile.setAttribute('aria-hidden', diff === 0 ? 'false' : 'true');
+        tile.classList.toggle('is-active', diff === 0);
+      });
+    }
+
+    function goTo(i){
+      active = ((i % n) + n) % n;
+      layout();
+    }
+    function next(){ goTo(active + 1); }
+    function prev(){ goTo(active - 1); }
+
+    function stopAutoplay(){
+      if (autoplayId) { clearInterval(autoplayId); autoplayId = null; }
+    }
+    function startAutoplay(){
+      if (reduceMotion) return;
+      stopAutoplay();
+      autoplayId = setInterval(next, 4200);
+    }
+    function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
+
+    tiles.forEach(function(tile, i){
+      tile.addEventListener('click', function(){
+        if (i !== active) { goTo(i); restartAutoplay(); }
+      });
+    });
+    prevBtn.addEventListener('click', function(){ prev(); restartAutoplay(); });
+    nextBtn.addEventListener('click', function(){ next(); restartAutoplay(); });
+    carouselWrap.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowLeft') { prev(); restartAutoplay(); }
+      else if (e.key === 'ArrowRight') { next(); restartAutoplay(); }
+    });
+    carouselWrap.addEventListener('mouseenter', stopAutoplay);
+    carouselWrap.addEventListener('mouseleave', startAutoplay);
+    carouselWrap.addEventListener('focusin', stopAutoplay);
+    carouselWrap.addEventListener('focusout', startAutoplay);
+
+    layout();
+    startAutoplay();
+  }
+</script>
+</body>
+</html>

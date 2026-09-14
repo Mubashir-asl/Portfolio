@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Mubashir Aslam</title>
+<meta name="description" content="Selected work by Mubashir Aslam: social media designs, logos, banners, email designs and signage artwork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --wash:#F1F5FD; --ink:#0B1B3A; --muted:#5D6E8C;
+  --blue:#1B4DFF; --blue-deep:#0F2FA8; --orange:#FF5C1A; --hair:#DCE4F2;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:Karla,"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+h1,h2,h3{margin:0;font-family:Syne,Karla,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.02}
+h1{font-size:clamp(2.6rem,9vw,5.6rem);letter-spacing:-.045em}
+h2{font-size:clamp(1.8rem,4vw,2.8rem)}
+h3{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;line-height:1.35}
+p{margin:0 0 1em}
+.lede{font-size:clamp(1.05rem,1.5vw,1.22rem);color:#31405C;max-width:56ch}
+
+.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.mark{font-family:Syne,sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:9px}
+.mark:hover{text-decoration:none;color:var(--blue)}
+.mark i{width:9px;height:9px;background:var(--orange);border-radius:99px;display:block}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.96rem;font-weight:500}
+.nav ul a{color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--orange)}
+.nav ul a[aria-current]:hover{text-decoration:none}
+
+.top{padding:clamp(40px,6vw,80px) 0 clamp(24px,3vw,34px)}
+.top h1 em{font-style:normal;color:var(--blue)}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:9px;padding-bottom:clamp(24px,3.5vw,36px);border-bottom:1px solid var(--hair)}
+.filters button{
+  font:inherit;font-size:.93rem;font-weight:600;cursor:pointer;color:var(--muted);
+  background:#fff;border:1px solid var(--hair);border-radius:2px;padding:9px 16px;
+  transition:color .15s,border-color .15s,background .15s;
+}
+.filters button:hover{color:var(--ink);border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.count{margin:18px 0 0;color:var(--muted);font-size:.92rem}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;padding:22px 0 clamp(56px,8vw,96px)}
+.tile{margin:0;grid-column:span 2;background:#fff;border:1px solid var(--hair);overflow:hidden;transition:border-color .18s,transform .18s}
+.tile:hover{border-color:var(--blue);transform:translateY(-3px)}
+.tile.wide{grid-column:span 4}
+.thumb{aspect-ratio:4/3;display:grid;place-items:center;padding:20px;background:#fff}
+.tile.wide .thumb{aspect-ratio:2/1;background:var(--wash)}
+.thumb svg{width:100%;height:100%}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.tile figcaption{padding:14px 16px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.tile .cat{color:var(--orange);font-size:.82rem;font-weight:600;flex:none}
+.empty{color:var(--muted);padding:10px 0 70px}
+
+.hire{background:var(--blue);color:#fff;padding:clamp(52px,8vw,92px) 0}
+.hire h2{color:#fff;max-width:24ch}
+.hire a{color:#fff}
+.mailto{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(1.3rem,4vw,2.4rem);letter-spacing:-.03em;display:inline-block;margin:20px 0 6px;word-break:break-word;box-shadow:inset 0 -3px 0 var(--orange)}
+.mailto:hover{text-decoration:none;color:#FFD9C9}
+footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:.88rem;border-top:1px solid var(--hair)}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile,.tile.wide{grid-column:span 1}
+  .tile.wide .thumb{aspect-ratio:4/3}
+  .nav ul{gap:16px;font-size:.9rem}
+}
+@media (max-width:540px){
+  body{font-size:16px}
+  .grid{grid-template-columns:1fr}
+  .nav .mark span{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="index.html"><i></i><span>Mubashir Aslam</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="#hire">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="top wrap">
+  <h1>The <em>work</em></h1>
+  <p class="lede">Social media designs, logos, banners, email layouts and signage artwork. Filter by what you're looking for.</p>
+</header>
+
+<main class="wrap">
+  <div class="filters" role="group" aria-label="Filter work by category">
+    <button type="button" data-filter="all" aria-pressed="true">Everything</button>
+    <button type="button" data-filter="social" aria-pressed="false">Social media</button>
+    <button type="button" data-filter="logo" aria-pressed="false">Logos</button>
+    <button type="button" data-filter="banner" aria-pressed="false">Banners</button>
+    <button type="button" data-filter="email" aria-pressed="false">Email design</button>
+    <button type="button" data-filter="neon" aria-pressed="false">Neon signs</button>
+    <button type="button" data-filter="channel" aria-pressed="false">Channel letters</button>
+  </div>
+  <p class="count" id="count">Showing all 12 pieces</p>
+
+  <!--
+    ADDING YOUR OWN WORK
+    Inside a tile, replace the whole <svg>...</svg> with:
+        <img src="images/your-file.jpg" alt="Short description of the design">
+    Keep the data-cat value so the filter keeps working, and edit the title in <figcaption>.
+    Copy any <figure class="tile"> block to add more. Add class="wide" for a double-width tile.
+  -->
+  <div class="grid" id="grid">
+
+    <figure class="tile wide" data-cat="logo">
+      <div class="thumb" data-slot="work-1" data-slot-label="Work: Logo suite for a retail brand">
+        <svg viewBox="0 0 400 200" role="img" aria-label="Logo suite">
+          <circle cx="86" cy="100" r="46" fill="#1B4DFF"/>
+          <path d="M62 124V72l24 30 24-30v52" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+          <rect x="176" y="66" width="88" height="88" fill="#0B1B3A"/>
+          <circle cx="220" cy="110" r="22" fill="#FF5C1A"/>
+          <path d="M300 154V66l34 44 34-44v88" fill="none" stroke="#0B1B3A" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <figcaption><h3>Logo suite for a retail brand</h3><span class="cat">Logo</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="social">
+      <div class="thumb" data-slot="work-2" data-slot-label="Work: Sale campaign post">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Sale campaign post">
+          <rect x="22" y="16" width="156" height="104" fill="#1B4DFF"/>
+          <circle cx="70" cy="56" r="24" fill="#FF5C1A"/>
+          <rect x="106" y="42" width="54" height="10" fill="#fff"/>
+          <rect x="106" y="58" width="36" height="10" fill="#8FB0FF"/>
+          <rect x="44" y="94" width="112" height="12" fill="#fff"/>
+          <rect x="22" y="132" width="156" height="6" fill="#E6ECF8"/>
+        </svg>
+      </div>
+      <figcaption><h3>Sale campaign post</h3><span class="cat">Social</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="neon">
+      <div class="thumb" data-slot="work-3" data-slot-label="Work: Neon &quot;open&quot; sign">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Neon sign artwork">
+          <rect x="14" y="20" width="172" height="92" fill="#0B1B3A"/>
+          <g fill="none" stroke="#FF5C1A" stroke-width="6" stroke-linecap="round">
+            <path d="M52 84c-12 0-20-9-20-21s9-21 21-21 20 9 20 21-9 21-21 21z"/>
+            <path d="M92 84V42l30 42V42"/>
+            <path d="M140 42h30M140 63h24M140 84h30M140 42v42"/>
+          </g>
+          <rect x="14" y="122" width="172" height="6" fill="#E6ECF8"/>
+        </svg>
+      </div>
+      <figcaption><h3>Neon "open" sign</h3><span class="cat">Neon</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="channel">
+      <div class="thumb" data-slot="work-4" data-slot-label="Work: Shopfront channel letters">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Channel letters on a fascia">
+          <rect x="12" y="34" width="176" height="62" fill="#F1F5FD"/>
+          <rect x="30" y="50" width="30" height="34" fill="#1B4DFF"/>
+          <rect x="60" y="54" width="6" height="34" fill="#0F2FA8"/>
+          <rect x="78" y="50" width="30" height="34" fill="#0B1B3A"/>
+          <rect x="108" y="54" width="6" height="34" fill="#2A3B5C"/>
+          <rect x="126" y="50" width="30" height="34" fill="#FF5C1A"/>
+          <rect x="156" y="54" width="6" height="34" fill="#C2410C"/>
+          <rect x="12" y="104" width="176" height="6" fill="#C9D4E8"/>
+        </svg>
+      </div>
+      <figcaption><h3>Shopfront channel letters</h3><span class="cat">Channel letters</span></figcaption>
+    </figure>
+
+    <figure class="tile wide" data-cat="banner">
+      <div class="thumb" data-slot="work-5" data-slot-label="Work: Facebook cover banner">
+        <svg viewBox="0 0 400 200" role="img" aria-label="Page cover banner">
+          <rect x="20" y="40" width="360" height="120" fill="#fff" stroke="#DCE4F2"/>
+          <rect x="44" y="66" width="150" height="16" fill="#0B1B3A"/>
+          <rect x="44" y="92" width="104" height="11" fill="#1B4DFF"/>
+          <rect x="44" y="112" width="70" height="11" fill="#C9D4E8"/>
+          <rect x="44" y="134" width="66" height="14" fill="#FF5C1A"/>
+          <circle cx="310" cy="100" r="40" fill="#1B4DFF"/>
+          <circle cx="310" cy="100" r="16" fill="#fff"/>
+        </svg>
+      </div>
+      <figcaption><h3>Facebook cover banner</h3><span class="cat">Banner</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="email">
+      <div class="thumb" data-slot="work-6" data-slot-label="Work: Newsletter template">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Newsletter template">
+          <rect x="50" y="12" width="100" height="126" fill="#F1F5FD"/>
+          <rect x="50" y="12" width="100" height="26" fill="#1B4DFF"/>
+          <rect x="62" y="22" width="44" height="8" fill="#fff"/>
+          <rect x="62" y="50" width="76" height="32" fill="#C9D4E8"/>
+          <rect x="62" y="90" width="76" height="7" fill="#0B1B3A"/>
+          <rect x="62" y="102" width="54" height="7" fill="#98A7BF"/>
+          <rect x="62" y="118" width="42" height="12" fill="#FF5C1A"/>
+        </svg>
+      </div>
+      <figcaption><h3>Newsletter template</h3><span class="cat">Email</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="social">
+      <div class="thumb" data-slot="work-7" data-slot-label="Work: Carousel set">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Instagram carousel">
+          <rect x="10" y="28" width="78" height="78" fill="#0B1B3A"/>
+          <rect x="24" y="44" width="46" height="10" fill="#fff"/>
+          <rect x="24" y="60" width="30" height="10" fill="#FF5C1A"/>
+          <rect x="24" y="86" width="50" height="8" fill="#4A5C7C"/>
+          <rect x="98" y="28" width="78" height="78" fill="#F1F5FD"/>
+          <circle cx="137" cy="60" r="18" fill="#1B4DFF"/>
+          <rect x="112" y="86" width="50" height="8" fill="#C9D4E8"/>
+          <rect x="80" y="122" width="40" height="6" fill="#E6ECF8"/>
+        </svg>
+      </div>
+      <figcaption><h3>Carousel set</h3><span class="cat">Social</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="social">
+      <div class="thumb" data-slot="work-8" data-slot-label="Work: Product promo">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Product promo post">
+          <rect x="30" y="14" width="140" height="118" fill="#F1F5FD"/>
+          <rect x="56" y="36" width="88" height="54" fill="#1B4DFF"/>
+          <circle cx="100" cy="63" r="18" fill="#fff"/>
+          <rect x="56" y="102" width="88" height="12" fill="#FF5C1A"/>
+        </svg>
+      </div>
+      <figcaption><h3>Product promo</h3><span class="cat">Social</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="logo">
+      <div class="thumb" data-slot="work-9" data-slot-label="Work: Wordmark and lockup">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Wordmark and lockup">
+          <rect x="28" y="30" width="26" height="10" fill="#FF5C1A"/>
+          <rect x="28" y="54" width="144" height="14" fill="#0B1B3A"/>
+          <rect x="28" y="76" width="96" height="11" fill="#1B4DFF"/>
+          <rect x="28" y="94" width="58" height="11" fill="#C9D4E8"/>
+        </svg>
+      </div>
+      <figcaption><h3>Wordmark and lockup</h3><span class="cat">Logo</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="banner">
+      <div class="thumb" data-slot="work-10" data-slot-label="Work: Web banner set">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Web banner set">
+          <rect x="18" y="32" width="164" height="32" fill="#1B4DFF"/>
+          <rect x="32" y="42" width="62" height="12" fill="#fff"/>
+          <rect x="146" y="42" width="24" height="12" fill="#FF5C1A"/>
+          <rect x="18" y="76" width="164" height="32" fill="#F1F5FD"/>
+          <rect x="32" y="86" width="90" height="12" fill="#0B1B3A"/>
+          <rect x="146" y="86" width="24" height="12" fill="#1B4DFF"/>
+        </svg>
+      </div>
+      <figcaption><h3>Web banner set</h3><span class="cat">Banner</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="neon">
+      <div class="thumb" data-slot="work-11" data-slot-label="Work: Script neon for a cafe">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Script neon sign">
+          <rect x="14" y="18" width="172" height="96" fill="#0B1B3A"/>
+          <path d="M36 88c8-32 22-44 34-44s14 14 6 28-20 20-28 12 0-24 16-24 32 14 38 28" fill="none" stroke="#FF5C1A" stroke-width="6" stroke-linecap="round"/>
+          <path d="M142 90V50m0 40h26" fill="none" stroke="#8FB0FF" stroke-width="6" stroke-linecap="round"/>
+          <rect x="14" y="124" width="172" height="6" fill="#E6ECF8"/>
+        </svg>
+      </div>
+      <figcaption><h3>Script neon for a cafe</h3><span class="cat">Neon</span></figcaption>
+    </figure>
+
+    <figure class="tile" data-cat="email">
+      <div class="thumb" data-slot="work-12" data-slot-label="Work: Promotional email">
+        <svg viewBox="0 0 200 150" role="img" aria-label="Promotional email design">
+          <rect x="26" y="30" width="148" height="92" fill="#F1F5FD" stroke="#DCE4F2"/>
+          <path d="M26 34l74 48 74-48" fill="none" stroke="#1B4DFF" stroke-width="6"/>
+          <rect x="26" y="30" width="148" height="92" fill="none" stroke="#FF5C1A" stroke-width="3"/>
+        </svg>
+      </div>
+      <figcaption><h3>Promotional email</h3><span class="cat">Email</span></figcaption>
+    </figure>
+
+  </div>
+  <p class="empty" id="empty" hidden>Nothing in that category yet. Try another, or ask me about it.</p>
+</main>
+
+<section class="hire" id="hire">
+  <div class="wrap">
+    <h2>Something you need designed?</h2>
+    <a class="mailto" href="mailto:bugswork62@gmail.com">bugswork62@gmail.com</a>
+    <p style="max-width:52ch;color:#DCE4FF">Or call 0325-8979556. Karachi, Pakistan — working with clients anywhere.</p>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>Mubashir Aslam — graphic designer, Karachi</span>
+  <span><a href="index.html">Back to home</a></span>
+</footer>
+
+<script>
+  var buttons = document.querySelectorAll('.filters button');
+  var tiles = document.querySelectorAll('#grid .tile');
+  var empty = document.getElementById('empty');
+  var count = document.getElementById('count');
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pick = btn.dataset.filter;
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+      var shown = 0;
+      tiles.forEach(function(t){
+        var match = pick === 'all' || t.dataset.cat === pick;
+        t.hidden = !match;
+        if (match) shown++;
+      });
+      empty.hidden = shown > 0;
+      count.textContent = pick === 'all'
+        ? 'Showing all ' + shown + ' pieces'
+        : 'Showing ' + shown + ' in ' + btn.textContent.toLowerCase();
+    });
+  });
+</script>
+</body>
+</html>
