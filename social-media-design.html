@@ -84,14 +84,14 @@ main{padding:clamp(30px,5vw,50px) 0 clamp(60px,8vw,96px)}
 footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:.88rem;border-top:1px solid var(--hair)}
 
 @media (max-width:900px){
-  .grid-social{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-social{grid-template-columns:repeat(3,minmax(0,1fr))}
   .lb-prev,.lb-next{width:42px;height:42px;font-size:1.3rem}
   .lb-prev{left:8px}
   .lb-next{right:8px}
 }
 @media (max-width:540px){
   body{font-size:16px}
-  .grid-social{grid-template-columns:1fr}
+  .grid-social{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .nav .mark span{display:none}
   .lb-close{top:14px;right:14px}
 }
