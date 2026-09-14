@@ -1,0 +1,7 @@
+{
+    "gitdoc.enabled": true,
+    "gitdoc.autoCommitDelay": 4000,
+    "gitdoc.autoPush": "onCommit",
+    "gitdoc.autoPull": "onCommit",
+    "gitdoc.commitMessageFormat": "Auto-update: ${fileNames}"
+}

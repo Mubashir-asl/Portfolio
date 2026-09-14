@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Media Design — Mubashir Aslam</title>
+<meta name="description" content="Social media design work by Mubashir Aslam: posts, carousels, stories and promotional graphics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --wash:#F1F5FD; --ink:#0B1B3A; --muted:#5D6E8C;
+  --blue:#015eea; --orange:#FF5C1A; --hair:#DCE4F2; --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:Inter,"Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+h1,h2,h3{margin:0;font-family:'Space Grotesk',Inter,sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.02}
+p{margin:0 0 1em}
+.lede{font-size:clamp(1.05rem,1.5vw,1.22rem);color:#31405C;max-width:56ch}
+
+.nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.mark{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:9px}
+.mark:hover{text-decoration:none;color:var(--blue)}
+.mark i{width:9px;height:9px;background:var(--orange);border-radius:99px;display:block}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.96rem;font-weight:500}
+.nav ul a{color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--orange)}
+.nav ul a[aria-current]:hover{text-decoration:none}
+
+.top{padding:clamp(40px,6vw,74px) 0 clamp(20px,3vw,30px);position:relative;overflow:hidden}
+.top::before,.top::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:0;pointer-events:none}
+.top::before{width:380px;height:380px;background:linear-gradient(135deg,var(--blue),#8FB4FF);opacity:.28;top:-120px;left:-100px}
+.top::after{width:320px;height:320px;background:linear-gradient(135deg,var(--orange),#FFC9A8);opacity:.24;top:-80px;right:-80px}
+.top .wrap{position:relative;z-index:1}
+.top h1{font-size:clamp(2.4rem,7vw,4.4rem);letter-spacing:-.04em}
+.top h1 em{font-style:normal;color:var(--blue)}
+.top .lede{margin-top:16px}
+
+main{padding:clamp(30px,5vw,50px) 0 clamp(60px,8vw,96px)}
+.grid-social{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.s-card{
+  margin:0;cursor:pointer;overflow:hidden;text-align:left;padding:0;border:1px solid rgba(255,255,255,.6);
+  border-radius:22px;background:rgba(255,255,255,.5);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+  box-shadow:0 8px 26px rgba(11,27,58,.07);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s ease,background .35s ease;
+}
+.s-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(1,94,234,.16);background:rgba(255,255,255,.7)}
+.s-card .thumb{aspect-ratio:4/5;display:grid;place-items:center;padding:18px;background:var(--wash)}
+.s-card .thumb svg,.s-card .thumb img{width:100%;height:100%}
+.s-card .thumb img{object-fit:cover;border-radius:14px}
+
+/* lightbox */
+.lightbox{
+  position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;
+  background:rgba(6,14,32,.86);backdrop-filter:blur(6px);padding:5vw;
+}
+.lightbox.open{display:flex}
+.lb-stage{position:relative;max-width:760px;width:100%;max-height:88vh;display:flex;flex-direction:column;align-items:center;gap:16px}
+.lb-stage img{max-width:100%;max-height:88vh;width:auto;border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.5);background:#fff}
+.lb-close,.lb-prev,.lb-next{
+  position:fixed;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff;
+  border-radius:999px;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(10px);
+  transition:background .2s,transform .2s;
+}
+.lb-close{top:26px;right:26px;width:44px;height:44px;font-size:1.4rem}
+.lb-prev,.lb-next{top:50%;transform:translateY(-50%);width:52px;height:52px;font-size:1.6rem}
+.lb-prev{left:20px}
+.lb-next{right:20px}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,.25)}
+
+footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;color:var(--muted);font-size:.88rem;border-top:1px solid var(--hair)}
+
+@media (max-width:900px){
+  .grid-social{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lb-prev,.lb-next{width:42px;height:42px;font-size:1.3rem}
+  .lb-prev{left:8px}
+  .lb-next{right:8px}
+}
+@media (max-width:540px){
+  body{font-size:16px}
+  .grid-social{grid-template-columns:1fr}
+  .nav .mark span{display:none}
+  .lb-close{top:14px;right:14px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="index.html"><i></i><span>Mubashir Aslam</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <h1>Social media <em>design</em></h1>
+    <p class="lede">Posts, carousels, stories and promotional graphics — click any piece for a closer look.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid-social" id="socialGrid">
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-1" data-slot-label="Social media: Product launch post"><img src="images/product-launch-post-social-1.png" alt="Product launch post"></div>
+    </figure>
+
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-2" data-slot-label="Social media: Sale announcement"><img src="images/sale-announcement-social-2.png" alt="Sale announcement"></div>
+    </figure>
+
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-3" data-slot-label="Social media: Story highlight cover"><img src="images/story-highlight-cover-social-3.png" alt="Story highlight cover"></div>
+    </figure>
+
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-4" data-slot-label="Social media: Carousel — brand tips"><img src="images/carousel-brand-tips-social-4.png" alt="Carousel: brand tips"></div>
+    </figure>
+
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-5" data-slot-label="Social media: Testimonial post"><img src="images/testimonial-post-social-5.png" alt="Testimonial post"></div>
+    </figure>
+
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-6" data-slot-label="Social media: Event promo post"><img src="images/event-promo-post-social-6.png" alt="Event promo post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-7" data-slot-label="Social media: New post"><img src="images/social-7.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-8" data-slot-label="Social media: New post"><img src="images/social-8.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-9" data-slot-label="Social media: New post"><img src="images/social-9.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-10" data-slot-label="Social media: New post"><img src="images/social-10.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-11" data-slot-label="Social media: New post"><img src="images/social-11.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-12" data-slot-label="Social media: New post"><img src="images/social-12.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-13" data-slot-label="Social media: New post"><img src="images/social-13.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-14" data-slot-label="Social media: New post"><img src="images/social-14.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-15" data-slot-label="Social media: New post"><img src="images/social-15.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-16" data-slot-label="Social media: New post"><img src="images/social-16.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-17" data-slot-label="Social media: New post"><img src="images/social-17.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-18" data-slot-label="Social media: New post"><img src="images/social-18.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-19" data-slot-label="Social media: New post"><img src="images/social-19.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-20" data-slot-label="Social media: New post"><img src="images/social-20.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-21" data-slot-label="Social media: New post"><img src="images/social-21.png" alt="Social media post"></div>
+    </figure>
+  
+    <figure class="s-card" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="thumb" data-slot="social-22" data-slot-label="Social media: New post"><img src="images/social-22.png" alt="Social media post"></div>
+    </figure>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lb-close" type="button" aria-label="Close">×</button>
+  <button class="lb-prev" type="button" aria-label="Previous piece">‹</button>
+  <div class="lb-stage">
+    <img id="lbImg" src="" alt="">
+  </div>
+  <button class="lb-next" type="button" aria-label="Next piece">›</button>
+</div>
+
+<footer class="wrap">
+  <span>Mubashir Aslam — graphic designer, Karachi</span>
+  <span><a href="index.html">Back to home</a></span>
+</footer>
+
+<script>
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.s-card'));
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var closeBtn = document.querySelector('.lb-close');
+  var prevBtn = document.querySelector('.lb-prev');
+  var nextBtn = document.querySelector('.lb-next');
+  var current = 0;
+
+  cards.forEach(function(card){
+    var thumb = card.querySelector('.thumb');
+    var label = thumb.getAttribute('data-slot-label') || 'Social media post';
+    card.setAttribute('aria-label', 'View ' + label.replace(/^Social media:\s*/, ''));
+  });
+
+  function cardData(card){
+    var thumb = card.querySelector('.thumb');
+    var img = thumb.querySelector('img');
+    var svg = thumb.querySelector('svg');
+    var label = thumb.getAttribute('data-slot-label') || 'Social media post';
+    return {
+      src: img ? img.getAttribute('src') : null,
+      svg: svg ? svg.outerHTML : null,
+      label: label.replace(/^Social media:\s*/, '')
+    };
+  }
+
+  function render(i){
+    current = ((i % cards.length) + cards.length) % cards.length;
+    var d = cardData(cards[current]);
+    if (d.src) {
+      lbImg.hidden = false;
+      lbImg.src = d.src;
+      lbImg.alt = d.label;
+    } else {
+      lbImg.hidden = true;
+    }
+    var existingSvg = document.getElementById('lbSvgWrap');
+    if (existingSvg) existingSvg.remove();
+    if (!d.src && d.svg) {
+      var wrap = document.createElement('div');
+      wrap.id = 'lbSvgWrap';
+      wrap.style.width = 'min(70vw,520px)';
+      wrap.style.background = '#fff';
+      wrap.style.borderRadius = '16px';
+      wrap.style.padding = '30px';
+      wrap.style.boxShadow = '0 30px 70px rgba(0,0,0,.5)';
+      wrap.innerHTML = d.svg;
+      lbImg.insertAdjacentElement('afterend', wrap);
+    }
+  }
+
+  function openLightbox(i){
+    render(i);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    cards[current].focus();
+  }
+
+  cards.forEach(function(card, i){
+    card.addEventListener('click', function(){ openLightbox(i); });
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', function(){ render(current - 1); });
+  nextBtn.addEventListener('click', function(){ render(current + 1); });
+  lightbox.addEventListener('click', function(e){ if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function(e){
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') render(current - 1);
+    else if (e.key === 'ArrowRight') render(current + 1);
+  });
+</script>
+</body>
+</html>
