@@ -302,6 +302,14 @@ footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space
       <div class="carousel-wrap reveal" role="region" aria-roledescription="carousel" aria-label="Selected work" tabindex="0">
         <button class="car-btn car-prev" type="button" aria-label="Previous work">‹</button>
         <div class="carousel" id="workCarousel">
+          <div class="folder" aria-hidden="true">
+            <div class="folder-tab"></div>
+            <div class="folder-body">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              </svg>
+            </div>
+          </div>
           <figure class="tile">
             <div class="thumb" data-slot="home-work-1" data-slot-label="Selected work: Visual branding"><img src="images/visual-branding-home-work-1.png" alt="Visual branding"></div>
             <figcaption><h3>Visual branding</h3><span class="cat">Branding</span></figcaption>
@@ -483,10 +491,10 @@ footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     var STEPS_COLLAPSED = [
-      { x: 0, rot: 0, scale: 1, op: 1 },
-      { x: 3, rot: 2, scale: .97, op: .9 },
-      { x: 6, rot: 4, scale: .94, op: .65 },
-      { x: 9, rot: 6, scale: .9, op: 0 }
+      { x: 0, rot: 0, scale: .6, op: 0 },
+      { x: 0, rot: 0, scale: .6, op: 0 },
+      { x: 0, rot: 0, scale: .6, op: 0 },
+      { x: 0, rot: 0, scale: .6, op: 0 }
     ];
     var STEPS_EXPANDED = [
       { x: 0, rot: 0, scale: 1, op: 1 },
@@ -508,7 +516,7 @@ footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space
         tile.style.transform = 'translate(-50%,-50%) translateX(' + (sign * s.x) + '%) rotate(' + (sign * s.rot) + 'deg) scale(' + s.scale + ')';
         tile.style.zIndex = String(30 - abs * 5);
         tile.style.opacity = String(s.op);
-        var hidden = abs >= STEPS.length - 1;
+        var hidden = !hovered || abs >= STEPS.length - 1;
         tile.style.pointerEvents = hidden ? 'none' : 'auto';
         tile.setAttribute('aria-hidden', diff === 0 ? 'false' : 'true');
         tile.classList.toggle('is-active', diff === 0);
