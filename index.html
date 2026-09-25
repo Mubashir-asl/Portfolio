@@ -524,10 +524,14 @@ footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space
       if (e.key === 'ArrowLeft') { prev(); restartAutoplay(); }
       else if (e.key === 'ArrowRight') { next(); restartAutoplay(); }
     });
-    carouselWrap.addEventListener('mouseenter', stopAutoplay);
-    carouselWrap.addEventListener('mouseleave', startAutoplay);
-    carouselWrap.addEventListener('focusin', stopAutoplay);
-    carouselWrap.addEventListener('focusout', startAutoplay);
+    function expand(){ hovered = true; layout(); stopAutoplay(); }
+    function collapse(){ hovered = false; layout(); startAutoplay(); }
+    carouselWrap.addEventListener('mouseenter', expand);
+    carouselWrap.addEventListener('mouseleave', collapse);
+    carouselWrap.addEventListener('focusin', expand);
+    carouselWrap.addEventListener('focusout', function(e){
+      if (!carouselWrap.contains(e.relatedTarget)) collapse();
+    });
 
     layout();
     startAutoplay();
