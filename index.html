@@ -116,6 +116,25 @@ section{padding:clamp(56px,8vw,104px) 0}
 .tile .cat{color:var(--muted);font-size:.82rem;flex:none}
 .tile-link{display:block;color:inherit}
 .tile-link:hover{text-decoration:none;color:inherit}
+.folder{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:180px;height:126px;z-index:40;pointer-events:none;
+  transition:opacity .5s ease,transform .5s cubic-bezier(.22,.85,.3,1);
+}
+.folder-tab{
+  position:absolute;top:0;left:14px;width:80px;height:20px;border-radius:10px 10px 0 0;
+  background:rgba(1,94,234,.16);border:1px solid rgba(255,255,255,.65);border-bottom:none;
+  backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);
+}
+.folder-body{
+  position:absolute;top:16px;left:0;right:0;bottom:0;border-radius:6px 20px 20px 20px;
+  background:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.65);
+  backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:0 24px 46px rgba(11,27,58,.18);
+  display:grid;place-items:center;
+}
+.folder-body svg{width:44px;height:44px;color:rgba(1,94,234,.8)}
+.carousel-wrap:hover .folder,.carousel-wrap:focus-within .folder{opacity:0;transform:translate(-50%,-50%) scale(.82)}
 .car-btn{
   flex:none;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.6);
   background:rgba(255,255,255,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
