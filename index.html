@@ -463,14 +463,22 @@ footer{padding:26px 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:space
     var autoplayId = null;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var STEPS = [
+    var STEPS_COLLAPSED = [
       { x: 0, rot: 0, scale: 1, op: 1 },
-      { x: 68, rot: 9, scale: .88, op: 1 },
-      { x: 126, rot: 16, scale: .78, op: .6 },
-      { x: 170, rot: 22, scale: .68, op: 0 }
+      { x: 3, rot: 2, scale: .97, op: .9 },
+      { x: 6, rot: 4, scale: .94, op: .65 },
+      { x: 9, rot: 6, scale: .9, op: 0 }
     ];
+    var STEPS_EXPANDED = [
+      { x: 0, rot: 0, scale: 1, op: 1 },
+      { x: 78, rot: 12, scale: .86, op: 1 },
+      { x: 142, rot: 20, scale: .74, op: .7 },
+      { x: 190, rot: 26, scale: .64, op: 0 }
+    ];
+    var hovered = false;
 
     function layout(){
+      var STEPS = hovered ? STEPS_EXPANDED : STEPS_COLLAPSED;
       tiles.forEach(function(tile, i){
         var diff = i - active;
         if (diff > n / 2) diff -= n;
